@@ -45,7 +45,7 @@ class NewBookForm extends React.Component {
           <Form.Group controlId="status">
             <Form.Label>Book Status</Form.Label>
             <Form.Control as="select">
-              <option value="FAVROITE">FAVORITE</option>
+              <option value="FAVORITE">FAVORITE</option>
               <option value="RECOMENDED">RECOMENDED</option>
             </Form.Control>
           </Form.Group>

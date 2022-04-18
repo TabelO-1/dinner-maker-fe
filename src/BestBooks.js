@@ -55,7 +55,7 @@ class BestBooks extends React.Component {
           <Carousel>
             {this.state.books.map(book => (
               <Carousel.Item key={book._id}>
-                <img className="d-block w-100" src={bookImg} alt={book.title} />
+                <img className="d-block w-100" src={book.url ? book.url : bookImg} alt={book.title} />
                 <Carousel.Caption>
                   {book.title ? (<h3>{book.title}</h3>) : (<h3>Unknown title</h3>)}
                   {book.author ? (<h4>By {book.author}.</h4>) : (<h4>Unknown Author</h4>)}
