@@ -1,10 +1,15 @@
 import { Component } from "react";
+import Container from "react-bootstrap/Container";
 
 class Profile extends Component {
 
   render() {
-    /* TODO: render information about the developers */
-    return <p>Profile page coming soon</p>
+    return (
+      <Container>
+        <p id="image-id"></p>
+        <h3>Hello there</h3>
+      </Container>
+    )
   }
 };
 
