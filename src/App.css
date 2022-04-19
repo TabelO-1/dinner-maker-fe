@@ -5,3 +5,7 @@
 .center {
     text-align: center;
 }
+#bookImg {
+    height: 70%;
+    width: 100%;
+}
