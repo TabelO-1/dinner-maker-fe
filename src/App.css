@@ -1,3 +1,11 @@
-#image-id {
-    background-image: url("./Venator_Class_Star_Destroyer_CS.jpg");
+#aboutStyle {
+    color: whitesmoke;
+    text-align: center;
+}
+.center {
+    text-align: center;
+}
+#bookImg {
+    height: 70%;
+    width: 100%;
 }

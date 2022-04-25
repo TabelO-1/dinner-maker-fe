@@ -1,16 +1,19 @@
 import { Component } from "react";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
+import './App.css';
+import Venator from "./VenatorSD.jpg"
 
-class Profile extends Component {
-
+class About extends Component {
   render() {
     return (
-      <Container>
-        <p id="image-id"></p>
-        <h3>Hello there</h3>
-      </Container>
+      <div style={{backgroundImage: `url(${Venator})`, height: "992px"}} className="center">
+      <div id="aboutStyle">
+        <h1>Meet the Developer</h1>
+        <h3>Mason Whitaker</h3>
+        </div>
+      </div>
     )
   }
 };
 
-export default Profile;
+export default About;
