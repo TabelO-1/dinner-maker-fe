@@ -41,6 +41,23 @@ class BestBooks extends React.Component {
     const updateBooks = [...this.state.books, bookresults.data];
     this.setState({books: updateBooks})
   }
+  heresyRemoval = async (heresy) => {
+    try {
+      const proceed = window.confirm(`Do you wish to burn ${heresy.title} by ${heresy.author}?`);
+      if (proceed) {
+        let nonHeresy = this.state.books.filter(book => book._id !== heresy._id);
+        this.setState({books: nonHeresy});
+        const config = {
+          method: "delete",
+          baseURL: process.env.REACT_APP_SERVER,
+          url: `/books/${heresy._id}`
+        }
+        await axios(config);
+      }
+    } catch(e) {
+      console.error(e)
+    }
+  }
   render() {
     return (
       <div className="center">
@@ -61,6 +78,7 @@ class BestBooks extends React.Component {
                   {book.author ? (<h4>By {book.author}.</h4>) : (<h4>Unknown Author</h4>)}
                   {book.series && book.book ? (<p>{book.series} Book {book.book}.</p>) : (<p>Single Book</p>)}
                   {book.desc ? (<p>{book.desc}</p>) : (<p>No Description Available</p>)}
+                  <Button onClick={() => this.heresyRemoval(book)}>Remove this heresy!</Button>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
