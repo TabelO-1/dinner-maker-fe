@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import BestBooks from './BestBooks';
+import Meals from './Meals';
 import About from './About'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -19,7 +19,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              <BestBooks />
+              <Meals />
             </Route>
             <Route exact path="/about">
               <About />
