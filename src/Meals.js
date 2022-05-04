@@ -38,12 +38,12 @@ class Meals extends React.Component {
       data: meal,
     };
     let mealresults = await axios(config);
-    const updateMealss = [...this.state.meals, mealresults.data];
+    const updateMeals = [...this.state.meals, mealresults.data];
     this.setState({meals: updateMeals})
   }
   poisonRemoval = async (poison) => {
     try {
-      const proceed = window.confirm(`Do you wish to burn ${poison.name}?`);
+      const proceed = window.confirm(`Do you wish to throw out ${poison.name}?`);
       if (proceed) {
         let nonPoison = this.state.meals.filter(meal => meal._id !== poison._id);
         this.setState({meals: nonPoison});
@@ -74,9 +74,12 @@ class Meals extends React.Component {
               <Carousel.Item key={meal._id}>
                 <img className="d-block w-100" id="bookImg"src={meal.url ? meal.url : foodImg} alt={meal.name} />
                 <Carousel.Caption>
-                  {meal.name ? (<h3>{meal.name}</h3>) : (<h3>Unknown Recipe</h3>)}
-                  {meal.cuisine ? (<h4>{cuisune.desc} Cuisine.</h4>) : (<h4>Unknown Cuisine</h4>)}
-                  {meal.desc && meal.recipe ? (<p>{meal.desc}. Recipe: <br></br>{meal.recipe}</p>) : (<p>No Description found.</p>)}
+                  {meal.name ? 
+                  (<h3 className="textClass">{meal.name}</h3>) : (<h3 className="textClass">Unknown Recipe</h3>)}
+                  {meal.cuisine ?
+                   (<h4 className="textClass">{meal.cuisine} Cuisine.</h4>) : (<h4 className="textClass">Unknown Cuisine</h4>)}
+                  {meal.desc && meal.recipe ?
+                   (<p className="textClass">{meal.desc}. Recipe: <br></br>{meal.recipe}</p>) : (<p className="textClass">No Description found.</p>)}
                   <Button onClick={() => this.poisonRemoval(meal)}>Remove this meal!</Button>
                 </Carousel.Caption>
               </Carousel.Item>

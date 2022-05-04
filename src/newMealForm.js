@@ -22,11 +22,11 @@ class NewMealForm extends React.Component {
         <Form onSubmit={this.newMeal}>
           <Form.Group controlId="mealName">
             <Form.Label>Meal Name</Form.Label>
-            <Form.Control type="text" placeholder="Book Name" />
+            <Form.Control type="text" placeholder="Meal Name" />
           </Form.Group>
           <Form.Group controlId="desc">
             <Form.Label>Meal Description</Form.Label>
-            <Form.Control type="text" placeholder="Book Description" />
+            <Form.Control type="text" placeholder="Meal Description" />
           </Form.Group>
           <Form.Group controlId="recipe">
             <Form.Label>Meal Recipe</Form.Label>
@@ -35,8 +35,8 @@ class NewMealForm extends React.Component {
           <Form.Group controlId="cuisine">
             <Form.Label>Cuisine</Form.Label>
             <Form.Control type="text" placeholder="Cuisine" />
-          </Form.Group>6
-          <Button type="submit">Add Book</Button>
+          </Form.Group>
+          <Button type="submit">Add Meal</Button>
         </Form>
         <Modal.Footer>
           <Button>Cancel</Button>
